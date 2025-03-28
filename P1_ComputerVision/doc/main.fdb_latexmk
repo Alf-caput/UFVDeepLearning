@@ -1,17 +1,18 @@
 # Fdb version 4
-["biber main"] 1742923705.37968 "main.bcf" "main.bbl" "main" 1742924919.20679 0
-  "main.bcf" 1742924918 108080 9423805d8bff83df7ca5fb8fd3ed626e "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1742930299.25751 -1
+  "bib.bib" 1742923359 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "main.bcf" 1742930298 108080 9423805d8bff83df7ca5fb8fd3ed626e "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1742924284.20385 "main.idx" "main.ind" "main" 1742924919.20632 0
-  "main.idx" 1742924918 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1742930285.29158 "main.idx" "main.ind" "main" 1742930299.25682 0
+  "main.idx" 1742930297 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1742924915.76579 "c:/Users/Rubén/Desktop/Universidad/cuarto_curso/dl/practica1/UFVDeepLearning/P1_ComputerVision/doc/main.tex" "main.pdf" "main" 1742924919.20743 0
+["pdflatex"] 1742930292.07933 "c:/Users/Rubén/Desktop/Universidad/cuarto_curso/dl/practica1/UFVDeepLearning/P1_ComputerVision/doc/main.tex" "main.pdf" "main" 1742930299.25872 0
   "C:/Users/Rubén/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742923125 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Rubén/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1736981674 12013877 d9b3c886c11fb628f1671950052f5657 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -21,13 +22,17 @@
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1233951854 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
+  "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbxti10.tfm" 1136765053 1532 9162035f4e7176612125649e348e2195 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmcsc10.tfm" 1136765053 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr17.tfm" 1136765053 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti12.tfm" 1136765053 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
+  "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1247596667 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -196,19 +201,19 @@
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Rubén/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/Rubén/Desktop/Universidad/cuarto_curso/dl/practica1/UFVDeepLearning/P1_ComputerVision/doc/main.tex" 1742924915 2654 083bf6ec838ee033a055cfe18bf8f588 ""
-  "conclusion.aux" 1742924918 4509 3ac299fe36dad3e9cc005ef19fcab490 "pdflatex"
+  "conclusion.aux" 1742930298 4509 64e0957cd4ad0af7c3f32d91f2a5a32e "pdflatex"
   "conclusion.tex" 1742923338 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "desarrollo.aux" 1742924918 4509 2e0d556aaf77e413849c6d74d1b887e6 "pdflatex"
-  "desarrollo.tex" 1742922779 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "desarrollo.aux" 1742930298 4906 465eb65d24e7483c8f790b7208876283 "pdflatex"
+  "desarrollo.tex" 1742930284 690 d12ba74053be7d5837d48548551957f0 ""
   "imagenes/logo_ufv.png" 1742923272 122295 cf10ebece9668c48c546ace10432d3b5 ""
-  "main.aux" 1742924918 614 872fbb1c4db3531e40079a9e275461d6 "pdflatex"
+  "main.aux" 1742930298 614 88e2912381a4c97e45cc517e8afccb89 "pdflatex"
   "main.bbl" 1742923771 486 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.ind" 1742924284 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1742924918 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1742924918 2298 cb46ba4ac39dd5731b0e521847736430 "pdflatex"
+  "main.ind" 1742930285 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.out" 1742930298 261 1f9a2e781b930858dbe672df06f76f3e "pdflatex"
+  "main.run.xml" 1742930298 2298 cb46ba4ac39dd5731b0e521847736430 "pdflatex"
   "main.tex" 1742924915 2654 083bf6ec838ee033a055cfe18bf8f588 ""
-  "main.toc" 1742924918 30 1bb04962d39b6bda471ac6c46ce13f85 "pdflatex"
-  "resumen.aux" 1742924918 4506 1ad2af4a761982643454d6166f04311e "pdflatex"
+  "main.toc" 1742930298 193 8b820baac6ff96d76b1446fb7a3aa1a0 "pdflatex"
+  "resumen.aux" 1742930298 4506 1ad2af4a761982643454d6166f04311e "pdflatex"
   "resumen.tex" 1742924080 244 f9d03d10b2bc676f2e89fc4675258c7d ""
   (generated)
   "conclusion.aux"
