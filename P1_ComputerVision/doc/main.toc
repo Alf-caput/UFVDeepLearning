@@ -1,3 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Desarrollo}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Atributos del \textit {Dataset}}{3}{subsection.1.1}%

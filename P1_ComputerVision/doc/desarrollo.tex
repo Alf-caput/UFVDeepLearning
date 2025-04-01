@@ -42,6 +42,24 @@ al uso de técnicas de \textit{data augmentation}, así como al empleo de arquit
 Además, existe un notable desbalanceo en la cantidad de imágenes representativas de cada clase, lo cual refuerza la necesidad de implementar una estrategia adecuada de 
 \textit{data augmentation} para mejorar la diversidad del conjunto de datos y mitigar los efectos negativos del desequilibrio en el entrenamiento del modelo.
 
+\subsection{Organización del \textit{dataset}}
+
+\noindent
+Para facilitar el trabajo con el \textit{dataset}, hemos automatizado su descarga, extracción y organización en carpetas según la clase dominante de
+cada imagen. Para ello, subimos el archivo \texttt{.zip} a \href{https://drive.google.com/uc?id=1iGBv-VT5mm1RiouD-U2qWcU3BYqp2OwE}{Google Drive} y 
+desarrollamos un código para descargarlo y descomprimirlo.  
+
+\quad  
+
+\noindent
+Luego, con el archivo \texttt{annotations}, identificamos la clase dominante de cada imagen según su área y frecuencia en la imagen, almacenándolas
+en carpetas con su respectivo nombre.  
+
+
+\subsection{Preprocesamiento}
+
+\noindent
+
 
 \subsection{\textit{Data Augmentation}}
 
