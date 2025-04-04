@@ -59,3 +59,49 @@ proceso de imágenes, para automatizar el proceso de preparación de datos para 
 %% ---------------------------------------------------------------------------
 
 \subsection{Fase 2: Implementación en modo Pre-Train}
+
+En esta seccion se ha implementado una red neuronal convolucional (CNN) y se han
+ido generando diferentes modelos a partir de esta red. Se ha ido modificando la arquitectura de la red,
+Teniendo así los siguientes resultados:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Modelo} & \textbf{Capas} & \textbf{LR Factor} & \textbf{LR Patience} & \textbf{Val Acc} & \textbf{Test Acc} \\ \hline
+        1 & 4 & 0.20 & 5 & 0.7480 & 0.8730 \\ \hline
+        2 & 3 & 0.10 & 3 & 0.7795 & 0.8254 \\ \hline
+        3 & 5 & 0.30 & 8 & 0.7717 & 0.7460 \\ \hline
+    \end{tabular}
+    \caption{Comparación de Modelos}
+\end{figure}
+
+\begin{center}
+    \textbf{Mejor Modelo: \#1}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Capas Convolucionales:} 4
+    \item \textbf{Factor de Reducción LR:} 0.2
+    \item \textbf{Paciencia para Reducción LR:} 5
+    \item \textbf{Mejor Época:} 18
+    \item \textbf{Precisión de Validación:} 0.7480
+    \item \textbf{Precisión de Prueba:} 0.8730
+\end{itemize}
+
+\quad
+
+\noindent
+Como se observa existe una diferencia entre la precisión de validación y la de prueba.
+Hay que tener en cuenta sin embargo que la precisión de test (prueba) es tan alta porque
+las imagenes del train son muy parecidas a las de test, ya que el dataset está hecho con imágenes
+un mismo video. Eso puede significar que el modelo no generalize fuera de este video o similares.
+
+\quad
+
+\noindent
+Como aprendizaje de esta fase, la limitación de calidad de las imágenes no tiene porqué afectar
+de forma muy negativa al modelo, y por lo tanto es una prueba que puede ser útil realizar en muchos 
+otros casos debido a su bajo coste computacional.
+\quad
