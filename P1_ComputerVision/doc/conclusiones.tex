@@ -60,6 +60,7 @@ proceso de imágenes, para automatizar el proceso de preparación de datos para 
 
 \subsection{Fase 2: Implementación en modo Pre-Train}
 
+\noindent
 En esta seccion se ha implementado una red neuronal convolucional (CNN) y se han
 ido generando diferentes modelos a partir de esta red. Se ha ido modificando la arquitectura de la red,
 Teniendo así los siguientes resultados:
@@ -105,3 +106,26 @@ Como aprendizaje de esta fase, la limitación de calidad de las imágenes no tie
 de forma muy negativa al modelo, y por lo tanto es una prueba que puede ser útil realizar en muchos 
 otros casos debido a su bajo coste computacional.
 \quad
+
+\begin{figure}[H]
+    \centering
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/confusion_matrix_a_quitar.png}
+    \caption{Matrices de confusión.}
+    \label{fig:confusion_matrix}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/loss_accuracy_validation_a_quitar.png}
+    \caption{train\_loss, accuracy y val\_loss}
+    \label{fig:loss_accuracy_validation}
+\end{figure}
+
+%% --------------------------------------------------------------------------
+%% FASE 3: IMPLEMENTACIÓN EN MODO FINE-TUNNING
+%% --------------------------------------------------------------------------
+
+\subsection{Fase 3: Implementación en modo Fine-Tunning}
+
