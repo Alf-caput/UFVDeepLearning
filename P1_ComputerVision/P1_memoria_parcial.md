@@ -35,10 +35,10 @@ Para el pipeline se utiliza un tipo de dato nativo de tensorflow, el tensorflow.
 
 Como entradas al pipeline se tienen los paths a las imágenes en los cuales están las etiquetas correspondientes (las imágenes han sido organizadas previamente en sus subcarpetas de clase). 
 
-Utilizando tf.data.Dataset.list_files se obtiene el objeto tf.data.Dataset que almacena tensores de paths y son estas cadenas binarias las que se convierten en pares (imágen, etiqueta) tras una serie de pasos:
+Utilizando tf.data.Dataset.list_files se obtiene el objeto tf.data.Dataset que almacena tensores de paths y son estas cadenas binarias las que se convierten en pares (imagen, etiqueta) tras una serie de pasos:
 1. Se obtienen las etiquetas en formato one-hot encoded: extrayendo del path el nombre de la etiqueta y mapeandolo a un entero utilizando una tabla hash se obtiene el entero asociado a la clase, que finalmente se convierte a formato one-hot. En este punto el pipeline devuelve pares path a la imagen y etiqueta en formato one-hot.
 2. Se obtienen las imagenes: se lee la imagen con tf.io.read_file y se convierte a tensor con tf.io.decode_image. En este punto el pipeline devuelve pares imagen y etiqueta.
-3. Redimensionado de las imágenes: Las imágenes anteriores son de tramaño variable, mientras que los modelos que se van a utilizar esperan datos para entrenar con las mismas dimensiones, primero se añade padding para conseguir que todas las imágenes sean 1024x1024 y después se redimensionan para utilizar un tamaño 64x64 como entrada. 
-4. Media 0 y desviación 1: ...
+3. Redimensionado de las imágenes: Las imágenes anteriores son de tamaño variable, mientras que los modelos que se van a utilizar esperan datos para entrenar con las mismas dimensiones, primero se añade padding para conseguir que todas las imágenes sean 1024x1024 y después se redimensionan para utilizar un tamaño 64x64 como entrada. 
+4. Media 0 y desviación 1: Una vez se tienen las imágenes en un tamaño adecuado se escalan sus características, esto es, los valores de los pixels se escalan para que tengan media 0 y desviación 1. Esto se realiza para conseguir una convergencia más rápida. 
 
 

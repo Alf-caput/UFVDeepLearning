@@ -47,21 +47,71 @@ Además, existe un notable desbalanceo en la cantidad de imágenes representativ
 \noindent
 Para facilitar el trabajo con el \textit{dataset}, hemos automatizado su descarga, extracción y organización en carpetas según la clase dominante de
 cada imagen. Para ello, subimos el archivo \texttt{.zip} a \href{https://drive.google.com/uc?id=1iGBv-VT5mm1RiouD-U2qWcU3BYqp2OwE}{Google Drive} y 
-desarrollamos un código para descargarlo y descomprimirlo.  
+desarrollamos un código para descargarlo y descomprimirlo utilizando la libraría gdown. Este contiene imágenes de 7 clases diferentes agrupadas en carpetas train, test y valid (validation).  
 
 \quad  
 
 \noindent
-Luego, con el archivo \texttt{annotations}, identificamos la clase dominante de cada imagen según su área y frecuencia en la imagen, almacenándolas
-en carpetas con su respectivo nombre.  
+A continuación se procede a etiquetar el dataset, aunque el conjunto de datos sugiere una sobrepoblación de peces en las imágenes, que clase de animal marino predomina en cada imagen se determinará a partir del área y número de veces que aparece una clase.
 
+\noindent
+Se define el siguiente criterio:
+\begin{equation}
+    \text{Dominant Class} = \arg\max_{c \in \mathcal{C}} \left( \text{area}_c \cdot \text{count}_c \right)
+\end{equation}
+
+
+\noindent
+Para una imagen la clase predominante será aquella cuyo producto área por número de veces que aparece sea mayor.La información que permite este cálculo se encuentra en los archivos csv de anotación disponibles en cada una de las carpetas train, test y valid. 
+Estos archivos contienen las asociaciones entre entidad e imagen, y en particular contienen los bounding boxes de los animales identificados en cada imagen. 
+
+\quad  
+
+\noindent
+Para obtener el conteo de una clase en cada imagen se agrupan las anotaciones por imagen y clase, y se aplica el método .size() que nos devuelve el tamaño de las agrupaciones.
+
+\quad  
+
+\noindent
+Para obtener el área de una clase primero se calcula para cada entidad y posteriormente se agrupa por imagen y clase para aplicar el método .sum() que nos devuelve la suma de áreas de una clase para cada imagen.
+
+\quad  
+
+\noindent
+Como consideraciones a futuro se podría tener en cuenta si existe superposición de bounding boxes y en su caso adaptar el cálculo de área, para esta práctica por no especificarse un criterio y ser un enfoque simple no se tienen en cuenta las intersecciones.
+
+\quad  
+
+\noindent
+Se tiene entonces pares (imagen, clase), para guardar este cálculo en forma de organización del repositorio, se crean en los sets de train, test y valid subcarpetas con nombres las etiquetas y se mueven las imágenes a sus respectivas carpetas. El algoritmo que define esta organización pasa por obtener los nuevos paths utilizando los nombres de imágenes y añadiendo las etiquetas correspondientes. El módulo shutil de Python nos permite mover los archivos y con un bloque try-except se evita que se produzcan errores si alguno de los archivos no se encuentra (esperable si ya se han movido a las subcarpetas).
 
 \subsection{Preprocesamiento}
 
 \noindent
+Una vez el dataset se encuentra organizado en subcarpetas de clase dominante (dentro de cada carpeta \textit{train}, \textit{test} y \textit{validation}), se preprocesan las imágenes definiendo una serie de pasos que permiten obtener entradas adecuadas para nuestros modelos.
 
+Para definir estos pasos a modo de pipeline se utiliza un tipo de dato nativo de tensorflow, el tensorflow.data.Dataset, este tipo de objeto es muy conveniente porque permite definir de manera sencilla y secuencial los pasos para transformar los datos en inputs adecuados para modelos de aprendizaje construidos con tensorflow. Se trata de un objeto por el que pasan y se pueden hacer operaciones con tensores en un formato eficiente.
+
+Como entradas al pipeline se tienen los paths a las imágenes en los cuales están las etiquetas correspondientes (las imágenes han sido organizadas previamente en sus subcarpetas de clase). 
+
+Utilizando el objeto Dataset del módulo data de tensorflow se almacena tensores de paths y son estas cadenas binarias las que se convierten en pares (imagen, etiqueta) tras una serie de pasos:
+
+\begin{itemize}
+    \item Se obtienen las etiquetas en formato one-hot encoded: extrayendo del path el nombre de la etiqueta y mapeandolo a un entero utilizando una tabla hash se obtiene el entero asociado a la clase, que finalmente se convierte a formato one-hot. En este punto el pipeline devuelve pares path a la imagen y etiqueta en formato one-hot.
+
+    \item Se obtienen las imágenes: utilizando las funciones io de tensorflow.
+
+    \item Redimensionado de las imágenes: Las imágenes anteriores son de tamaño variable, mientras que los modelos que se van a utilizar esperan datos para entrenar con las mismas dimensiones, primero se añade padding para conseguir que todas las imágenes sean 1024x1024 y después se redimensionan para utilizar un tamaño 64x64 como entrada en el caso Pre-train y 224x224 en el caso Fine-tuning. 
+
+    \item Media 0 y desviación 1: Una vez se tienen las imágenes en un tamaño adecuado se escalan sus características, esto es, los valores de los pixels se escalan para que tengan media 0 y desviación 1. Esto se realiza para conseguir una convergencia más rápida.
+
+\end{itemize}
 
 \subsection{\textit{Data Augmentation}}
+
+Tras el preprocesamiento de las imágenes, con la finalidad de obtener mayor diversidad en el conjunto de datos se han realizado pequeñas transformaciones en las imágenes, que pueden ayudar a que el modelo no sobreentrena mejorando su capacidad de generalización.
+
+Para ello, se han aplicado inversiones horizontales, así como rotaciones, zooms y recortes, todo ello se ha llevado a cabo de manera pseudoaleatoria.
 
 \subsection{\textit{Pre-Train}}
 
