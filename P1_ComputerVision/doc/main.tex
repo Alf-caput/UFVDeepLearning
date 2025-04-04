@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fvextra}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{biblatex}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{float}
+
+\addbibresource{bib.bib}
+
+\makeindex
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\center 
+ 
+%----------------------------------------------------------------------------------------%
+%	ENCABEZADO                                                                           %
+%----------------------------------------------------------------------------------------%
+
+\textsc{\LARGE Universidad Francisco de Vitoria}\\[1.5cm] 
+\textsc{\LARGE Escuela Politécnica Superior}\\[1.5cm] 
+
+\includegraphics[width=7cm]{imagenes/logo_ufv.png}\\[1cm] 
+\textsc{\Large Deep Learning}\\[1cm]
+
+
+%----------------------------------------------------------------------------------------%
+%	SECCION DEL TITULO                                                                   %
+%----------------------------------------------------------------------------------------%
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Práctica Grupal 1: \\[0.3cm]
+Computer Vision}\\[0.4cm] % Titulo del documento
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------%
+%	SECCION DEL AUTOR                                                                    %
+%----------------------------------------------------------------------------------------%
+
+\begin{minipage}{0.5\textwidth}
+    \begin{flushleft} \large
+        \emph{Profesor:}\\
+            D$^\circ$ Moisés \textsc{Martínez Muñoz}\\ 
+    \end{flushleft}
+        
+    \begin{flushleft} \large
+        \emph{Alumnos:}\\
+            Alfredo \textsc{Robledano Abasolo}\\ 
+            Jorge \textsc{Barcenilla González}\\ 
+            Rubén \textsc{Sierra Serrano}\\
+            Pedro \textsc{García Silgo}
+    \end{flushleft}
+\end{minipage}\\[0.8cm]
+
+
+%----------------------------------------------------------------------------------------%
+%	SECCION DE LA FECHA                                                                  %
+%----------------------------------------------------------------------------------------%
+
+{\large Martes 1 de abril de 2025}\\[2cm]
+\vfill 
+
+\end{titlepage}
+
+\pagebreak
+
+\include{resumen}
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\include{desarrollo}
+
+\pagebreak
+
+\include{conclusion}
+
+
+\end{document}
