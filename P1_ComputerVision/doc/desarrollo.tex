@@ -109,14 +109,42 @@ Utilizando el objeto Dataset del módulo data de tensorflow se almacena tensores
 
 \subsection{\textit{Data Augmentation}}
 
-Tras el preprocesamiento de las imágenes, con la finalidad de obtener mayor diversidad en el conjunto de datos se han realizado pequeñas transformaciones en las imágenes, que pueden ayudar a que el modelo no sobreentrena mejorando su capacidad de generalización.
+Tras el preprocesamiento de las imágenes, con la finalidad de obtener mayor diversidad en el conjunto de datos se han realizado pequeñas transformaciones en las imágenes, que pueden ayudar a que el modelo  sobreentrene menos, mejorando su capacidad de generalización.
 
 Para ello, se han aplicado inversiones horizontales, así como rotaciones, zooms y recortes, todo ello se ha llevado a cabo de manera pseudoaleatoria.
 
 \subsection{\textit{Pre-Train}}
 
-\subsection{\textit{Fine-Tuning}}
+En esta sección se han diseñado 3 modelos que cumplan las especificaciones pedidas:
+\begin{itemize}
+    \item Al menos 3 capas convolucionales.
+    \item ReLU como función de activación
+    \item softmax para la salida de la última capa.
+    \item Uso de la optimización RMSprop.
+    \item categorical crossentropy como función de pérdida
+    \item RMSprop para minimizar la función de pérdida
+\end{itemize}
 
+
+% Para repetir el proceso de definicion de arquitecturas en un bucle para distintos hiperparametros se define una funcion build_model que recibe como argumentos tamaños de kernel, tamaños de pooling, numero de capas y tasa de aprendizaje para ejecutar el proceso de entrenamiento.
+
+Se pide que utilizar 3 configuraciones de tamaños de kernel, tamaños de pooling, número de capas y tasa de aprendizaje para ejecutar el proceso de entrenamiento.
+
+Se han elegido tres tasas de aprendizaje variable dependiente de un parámetro paciencia que reduce el learning rate si no mejora el entrenamiento, de forma que se refine el mínimo de la pérdida cuando la red no mejora.
+
+Pasos realizados:
+
+\begin{itemize}
+    \item Definir callbacks: se define el EarlyStopping y el ReduceLROnPlateau. Lo que permite detener el entrenamiento cuando la red no mejora sobre datos de validación y por otro lado obtenemos un learning rate variable dependiente del parámetro paciencia.
+    \item Definir el modelo: se definen sus capas a partir de los parámetros elegidos.
+    \item Compilar el modelo: se definen las funciones de perdida y optimizador.
+\end{itemize}
+
+Finalmente con un bucle se obtienen los resultados del entrenamiento y se elige el mejor modelo.
+
+\subsection{\textit{Fine-Tuning}}
+Para el caso Fine-Tuning solo se utilizan 3 configuraciones de tasas de learning rate variables
+y la arquitectura del modelo se basa en un modelo preentrenado, en nuestro caso y tras varias pruebas hemos elegido el modelo MobileNetV3Large.
 \noindent
 Podemos observar 
 
