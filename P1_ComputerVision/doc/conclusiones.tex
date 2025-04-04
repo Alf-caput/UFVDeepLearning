@@ -121,3 +121,53 @@ otros casos debido a su bajo coste computacional.
 
 \subsection{Fase 3: Implementación en modo Fine-Tunning}
 
+\noindent
+En esta seccion se ha utilizado un modelo preentrenado como base (MobileNetV3Large) y se han
+ido generando diferentes modelos modificando la tasa de learning rate variable definido por la paciencia. Para utilizar este modelo se ha eliminado su capa superior y solo se han entrado las 20 últimas capas, para adaptar el aprendizaje a nuestro problema y a la vez aprovechar los pesos preentrenados.
+Teniendo así los siguientes resultados:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Modelo} & \textbf{LR Patience} & \textbf{Val Acc} & \textbf{Test Acc} \\ \hline
+        MobileNetV3Large & 8 & 0.8346 & 0.9263 \\ \hline
+        MobileNetV3Large & 4 & 0.8268 & 0.9367 \\ \hline
+        MobileNetV3Large & 2 & 0.8346 & 0.9578 \\ \hline
+    \end{tabular}
+    \caption{Comparación de Modelos}
+\end{figure}
+
+\begin{center}
+    \textbf{Mejor Modelo: \#3}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Paciencia para Reducción LR:} 2
+    \item \textbf{Mejor Época:} 36
+    \item \textbf{Precisión de Validación:} 0.8346
+    \item \textbf{Precisión de Prueba:} 0.9578
+\end{itemize}
+
+\quad
+
+\noindent
+Como aprendizaje de esta fase, encontramos la potencia de utilizar un modelo preentrenado como base, que puede ser reutilizado para nuestras propias tareas.
+\quad
+
+\begin{figure}[H]
+    \centering
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/train_fine2.png}
+    \caption{Matrices de confusión entrenamiento.}
+    \label{fig:confusion_matrix}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/train_fine.png}
+    \caption{Matrices de confusión test + train\_loss, accuracy y val\_loss}
+    \label{fig:loss_accuracy_validation}
+\end{figure}
