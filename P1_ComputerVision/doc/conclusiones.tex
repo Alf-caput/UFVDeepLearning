@@ -1,0 +1,61 @@
+\section{Conclusiones}
+
+\noindent
+
+%% ---------------------------------------------------------------------------
+%% FASE 1: PREPARACIÓN DEL ENTORNO
+%% ---------------------------------------------------------------------------
+
+\subsection{Fase 1: Preparación del entorno}
+
+\quad
+
+\noindent
+Pese a que en esta sección no se ha realizado ningún modelo, 
+es importante destacar que la preparación del entorno ha sido un 
+proceso fundamental para el desarrollo de la práctica.
+
+\quad
+
+\noindent
+También es resulta interesante mencionar el proceso de creación de imágenes sintéticas que al final no se 
+usaron. Con el proceso que realizó, se generó una imagen una imagen sintética para cada
+imagen que tuviera 2 tipos de animales o más en la misma imagen y que la segunda clase no fuera de fish.
+Siguiendo esta idea solo se generaron unas 24 imágenes nuevas, y debido a la poca aportación de imágenes de clases poco 
+representadas, se decidió no incluirlas en el \textit{dataset} final. 
+
+\quad
+
+\noindent
+Asimismo, resulta relevante mencionar el proceso de generación de imágenes sintéticas, 
+el cual finalmente no fue utilizado. Mediante este procedimiento se creó una imagen 
+sintética para cada imagen que contenía dos o más tipos de animales en la misma toma, 
+siempre que la segunda clase más predominante no correspondiese a \textit{fish}. 
+
+\quad
+
+\noindent
+El proceso se llevó a cabo seleccionando las imágenes candidatas y eliminando los 
+píxeles correspondientes a la primera clase predominante. Esto implicaba reemplazar 
+las áreas ocupadas por los animales de dicha clase con el color del fondo original. 
+A partir de esta modificación, se generó una nueva imagen sintética en la que la clase 
+predominante pasó a ser la segunda más representativa de la imagen original.
+
+\quad
+
+\noindent
+Siguiendo esta línea, 
+se produjeron aproximadamente 24 imágenes nuevas; sin embargo, dada la escasa producción 
+de imágenes de clases menos frecuentes, se optó por no incluirlas en el \textit{dataset} final.
+
+\quad
+
+\noindent
+Como aprendizaje fuera de estas imágenes sintéticas, se ha comprobado la utilidad de usar pipelines de
+proceso de imágenes, para automatizar el proceso de preparación de datos para el entrenamiento de modelos.
+
+%% ---------------------------------------------------------------------------
+%% FASE 2: IMPLEMENTACIÓN EN MODO PRE-TRAIN
+%% ---------------------------------------------------------------------------
+
+\subsection{Fase 2: Implementación en modo Pre-Train}
