@@ -175,3 +175,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignorar carpetas llamadas 'data'
+**/data/
+
+ 
